@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sit323-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sit323-app
+  template:
+    metadata:
+      labels:
+        app: sit323-app
+    spec:
+      containers:
+        - name: sit323-app
+          image: ethanza/sit323-6.1p-app:latest
+          ports:
+            - containerPort: 3000
